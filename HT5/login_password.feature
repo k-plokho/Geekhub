@@ -55,4 +55,5 @@ Feature: The login password as a required element of registration and login
     Then the message concerning successful recovery is displayed
     And I am successfully logged in the the system
     
-    
+# It's odd but there is no required password field in the registration form and no password field at all in the login form of the site I've chosen to test. 
+# And I don't think it's a bug (or it is???). So here I consider the login password as a feature which is very logical in these circumstances I guess (or it's not???).
