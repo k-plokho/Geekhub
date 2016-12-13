@@ -40,7 +40,7 @@ Feature: The login password as a required element of registration and login
     And I forgot the password
     Then the password recovery form is open
     And I fill the form with the following data:
-      | Email | chelovekpauk404@gmail.com
+      | Email | chelovekpauk404@gmail.com |
     And I click the button 'Востановить пароль'
     If
     
