@@ -18,7 +18,9 @@ Feature: The login password as a required element of registration and login
       | Depot №/№ склада          | 7                         |
     And I click the button 'Submit'
     And the message concerning the confirmation of the email address is displayed
-    When I confirm the email address by following the link in the mail sent by the system
+    When I confirm the email address by following the link in the mail sent by the system using the following data to enter the mailbox
+      |Email    | chelovekpauk404@gmail.com |
+      |Password | chelovekpauk404           |
     Then the message concerning the successful registration is displayed
     And page 'Личный кабинет' is automatically opened
     And I am registered and logged in as a retail customer
@@ -41,6 +43,16 @@ Feature: The login password as a required element of registration and login
     Then the password recovery form is open
     And I fill the form with the following data:
       | Email | chelovekpauk404@gmail.com |
-    And I click the button 'Востановить пароль'
-    If
+    When I click the button 'Востановить пароль'
+    Then the message concerning the recovery password link sent to the corresponding address by the system is displayed;
+    And I open my mailbox using following login data:
+      |Email    | chelovekpauk404@gmail.com |
+      |Password | chelovekpauk404           |
+    And I follow the link in the mail sent by the system
+    When the opened form is filled with the following data:
+      |New Password | chelovekpauk405 | 
+    And I submit the form
+    Then the message concerning successful recovery is displayed
+    And I am successfully logged in the the system
+    
     
