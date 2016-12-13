@@ -5,7 +5,7 @@ Feature: The login password as a required element of registration and login
 
   Scenario: Registration of the new retail customer with the login password as a required field of the form
     Given the login form for the retail customer is open
-    And i fill the form with following data:
+    And I fill the form with following data:
       | Last name/Фамилия         | Паркер                    |
       | First name/Имя            | Питер                     |
       | Patronym/Отчество         | Питерович                 |
@@ -16,3 +16,9 @@ Feature: The login password as a required element of registration and login
       | City/Город                | Черкассы                  |
       | Delivery company/Доставка | Новая Почта               |
       | Depot №/№ склада          | 7                         |
+    And I click the button 'Submit'
+    And the message concerning the confirmation of the email address is displayed
+    When I confirm the email address by following the link in the mail sent by the system
+    Then the message concerning the successful registration is displayed
+    And page 'Личный кабинет' is automatically opened
+    And I am registered and logged in
