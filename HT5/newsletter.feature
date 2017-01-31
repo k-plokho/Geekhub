@@ -9,7 +9,7 @@ Feature: The mailing list (newsletter) about discounts and some other useful new
     Then the form is displayed that should be filled with following data:
       | email | chelovekpauk404@gmail.com |
     When I submit the form 
-    Then the messege concerning the successful subscription is displayed
+    Then the message concerning the successful subscription is displayed
     And the newsletter of the present week is sent to my mailbox
     
   Scenario: Canceling the subscription via mailbox
@@ -18,7 +18,7 @@ Feature: The mailing list (newsletter) about discounts and some other useful new
       | Password | chelovekpauk404           |
     And the newsletter of the shop is opened
     When I click the button 'Отменить подписку' at the end of the letter
-    Then the page with the messege concerning the successful cancellation of the subscription is displayed
+    Then the page with the message concerning the successful cancellation of the subscription is displayed
     
     
     
